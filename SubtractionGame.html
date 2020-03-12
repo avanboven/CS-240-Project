@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--<style>
+		body {background-color: powderblue;}
+		h2 {color: yellow;}
+
+	<meta charset="utf-8"> -->
+	<title> Subtraction Game</title>
+	<script type="text/javascript" src="SubtractionGame.js"></script>	
+	<!-- Include JS File Here -->
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+<!--</head> -->		
+<body>
+	<!--<form action="singleNumberAddition.php" method="post" id="form_id">-->
+		<h2>Subtraction Game</h2>	  
+		
+		<br> Please answer the question: </br>
+		
+
+		
+
+		<p id = "problem" type = "text"  style = "visibility: visible"></p> <!--new-->
+
+		<script>
+			createNumbers(); //new
+			createMap();
+			document.getElementById("problem").innerHTML = Array.from(myMap.keys())[problemsSoFar];
+		</script>
+		<br/><br/>
+		Your Answer:
+		
+		<!--<p type = "answerTxt" style="visibility: visible"> </p>-->
+		<!--<input type="text" name="number 1" id="number 2" placeholder="number 1" />
+		-->
+		<input id="myInput" type="text" />
+    	<button id="btn1" onclick="checkAnswer()">Check Answer</button>
+    	<p id = "res2" style="visibility: visible"></p>
+
+
+
+    	<button onClick="window.location.reload();" style = "color:red;">Next Problem</button>
+    	
+		<!--<input type="Your answer" name="number" id="answer" placeholder="answer" /><br/><br/> -->
+		<!--<input type="submit" name="submit_id" id="checkAnswer" value="check answer" /> -->
+
+	<!--</form> -->
+	
+</body>
+</html>
