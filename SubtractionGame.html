@@ -8,11 +8,9 @@
 	<meta charset="utf-8"> -->
 	<title> Subtraction Game</title>
 	<script type="text/javascript" src="SubtractionGame.js"></script>	
-	<!-- Include JS File Here -->
-	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
-<!--</head> -->		
+		
 <body>
-	<!--<form action="singleNumberAddition.php" method="post" id="form_id">-->
+	
 		<h2>Subtraction Game</h2>	  
 		
 		<br> Please answer the question: </br>
@@ -20,27 +18,58 @@
 
 		
 
-		<p id = "problem" type = "text"  style = "visibility: visible"></p> <!--new-->
-
+		
+		<p id = "problem" type = "text"  style = "visibility: visible"></p> 
 		<script>
 			createNumbers(); //new
 			createMap();
-			document.getElementById("problem").innerHTML = Array.from(myMap.keys())[problemsSoFar];
 		</script>
 		<br/><br/>
-		Your Answer:
+
 		
-		<!--<p type = "answerTxt" style="visibility: visible"> </p>-->
-		<!--<input type="text" name="number 1" id="number 2" placeholder="number 1" />
-		-->
+		<script>
+			document.getElementById("problem").innerHTML = Array.from(myMap.keys())[problemsSoFar];
+		</script>
+		
+		Your Answer:
 		<input id="myInput" type="text" />
     	<button id="btn1" onclick="checkAnswer()">Check Answer</button>
     	<p id = "res2" style="visibility: visible"></p>
+    	<br/><br/>
+    	Problem number:
+    	<p id = "soFar" style="visibility: visible"></p>
 
 
-
-    	<button onClick="window.location.reload();" style = "color:red;">Next Problem</button>
+    	<button onClick="newProblem()" style = "color:red;">Next Problem</button>
     	
+
+    	<FORM METHOD="LINK" ACTION="Report.html">
+    		Would you like to generate a progress report for this game?
+    		<br/><br/>
+    		<!--Type your first name: <INPUT TYPE="text" NAME="First">
+			Type your last name: <INPUT TYPE="text" NAME="Last"> -->
+			<p id = "problemList" style = "visibility: visible;"></p>
+			<p id = "userAnswer" style = "visibility: visible;"></p>
+			<script>
+				document.getElementById("problemList").innerHTML = userAnswersNum;
+				document.getElementById("userAnswer").innerHTML = userAnswersNum;
+			</script>
+
+		<INPUT TYPE="submit" VALUE="Generate Report">
+		</FORM>
+
+
+		<p id = "userAns" type = "text"  style = "visibility: hidden;"></p> 
+		<p id = "userNum" type = "text"  style = "visibility: hidden;"></p> 
+		<p id = "problems" type = "text"  style = "visibility: hidden;"></p> 
+
+		<script>
+ 		document.getElementById("userAns").innerHTML = localStorage.getItem('userResponse');
+
+ 		document.getElementById("userNum").innerHTML = localStorage.getItem('userNumbers');
+
+ 		document.getElementById("problems").innerHTML = localStorage.getItem('allProblems');
+		</script>
 		<!--<input type="Your answer" name="number" id="answer" placeholder="answer" /><br/><br/> -->
 		<!--<input type="submit" name="submit_id" id="checkAnswer" value="check answer" /> -->
 
